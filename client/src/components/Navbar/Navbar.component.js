@@ -9,16 +9,16 @@ import Styles from './Navbar.module.css';
 const NavBar = () => {
   return(
     <BrowserRouter>
-      <AppBar position="absolute">
+      <AppBar position="fixed">
         <Toolbar>
-          <Link className={Styles.UndecoratedLinks} to="/">
+          <Link className={Styles.UndecoratedLinks} to="/" >
             <IconButton edge="start" color="inherit" aria-label="menu">
               <VideoCallRounded />
             <Typography variant="h5">Streamo</Typography>
             </IconButton>
           </Link>
           <div className={Styles.MenuItems}>
-            <Link className={Styles.UndecoratedLinks} to="/stream/new">
+            <Link className={Styles.UndecoratedLinks} to="/streams/new" >
               <Button color="inherit">
                 <i className="fa fa-plus"></i> &nbsp;
                 New
