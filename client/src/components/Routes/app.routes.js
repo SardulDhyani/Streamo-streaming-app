@@ -1,22 +1,29 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 
-import StreamList from '../../components/Streams/StreamList/StreamList.component';
-import StreamShow from '../../components/Streams/StreamShow/StreamShow.component';
-import StreamCreate from '../../components/Streams/StreamCreate/StreamCreate.component';
-import StreamEdit from '../../components/Streams/StreamEdit/StreamEdit.component';
-import StreamDelete from '../../components/Streams/StreamDelete/StreamDelete.component';
+import history from '../../history';
+
+
+import NavBar from '../Navbar/Navbar.component';
+import StreamList from '../Streams/Pages/StreamList/StreamList.component';
+import StreamShow from '../Streams/Pages/StreamShow/StreamShow.component';
+import StreamCreate from '../Streams/Pages/StreamCreate/StreamCreate.component';
+import StreamEdit from '../Streams/Pages/StreamEdit/StreamEdit.component';
+import StreamDelete from '../Streams/Pages/StreamDelete/StreamDelete.component';
+import SpacingGrid from '../Streams/Pages/RowPoster/RowPoster';
 
 const AppRoutes = function () {
 
   return (
-    <BrowserRouter>
-        <Route path="/" exact component={StreamList} />
-        <Route path="/streams/show" exact component={StreamShow} />
-        <Route path="/streams/new" exact component={StreamCreate} />
-        <Route path="/streams/edit" exact component={StreamEdit} />
-        <Route path="/streams/delete" exact component={StreamDelete} />
-    </BrowserRouter>
+    <Router history={history}>
+      <NavBar />
+      <Route path="/" exact component={StreamList} />
+      <Route path="/streams/show" exact component={StreamShow} />
+      <Route path="/streams/new" exact component={StreamCreate} />
+      <Route path="/streams/edit/:streamId" exact component={StreamEdit} />
+      <Route path="/streams/delete" exact component={StreamDelete} />
+      <Route path="/test" exact component={SpacingGrid} />
+    </Router>
   );
 }
 

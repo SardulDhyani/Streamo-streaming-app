@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Container, Grid, TextField, Button, Box } from '@material-ui/core';
 import { Field, reduxForm } from 'redux-form';
 
-import Styles from './StreamCreate.module.css';
+// import Styles from './StreamCreate.module.css';
 
-class StreamCreate extends Component {
+class StreamForm extends Component {
   renderError({error, touched}){
     if(touched && error){
       return error;
@@ -34,13 +34,13 @@ class StreamCreate extends Component {
     );
   }
 
-  onSubmit(formValues){
-    console.log(formValues);
+  onSubmit = (formValues) => {
+    this.props.onSubmit(formValues);
   }
 
   render(){
     return(
-      <Container maxWidth="xl"  className={Styles.TopContainer}>
+      <Container maxWidth="xl">
         <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
           <Grid item>
             <Field name="streamTitle" component={this.renderInput} label="Enter Title" type="text"/>
@@ -69,4 +69,4 @@ const validate = (formValues) => {
   return errors;
 }
 
-export default reduxForm({ form : 'createNewStream', validate })(StreamCreate);
+export default reduxForm({ form : 'streamForm', validate })(StreamForm);

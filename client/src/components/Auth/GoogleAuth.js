@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
-
+import { Button, Menu, MenuItem } from '@material-ui/core';
+// import { AccountCircleRounded, AddCircleRounded, Storage, ExitToApp } from '@material-ui/icons';
 import { signIn, signOut } from '../../actions';
 
 class GoogleAuth extends Component{
+
   renderAuthButton(){
     if(this.props.isSignedIn === null){
       return (
@@ -19,6 +20,17 @@ class GoogleAuth extends Component{
           <i className="fas fa-sign-out-alt"></i> &nbsp;
           Log Out
         </Button>
+        // <>
+        //   <Button color="inherit" aria-controls="loggedInMenu" aria-haspopup="true">
+        //     <AccountCircleRounded /> &nbsp;Profile
+        //   </Button>
+        //   <Menu id="loggedInMenu">
+        //     <MenuItem> <Storage /> &nbsp; Your Channel</MenuItem>
+        //     <MenuItem> <AddCircleRounded /> &nbsp; Create New Stream</MenuItem>
+        //     <MenuItem> <ExitToApp /> &nbsp; Sign Out</MenuItem>
+        //   </Menu>
+        // </>
+
       );
     } else{
       return (

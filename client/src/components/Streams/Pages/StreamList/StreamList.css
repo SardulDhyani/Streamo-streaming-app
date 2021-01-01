@@ -1,0 +1,22 @@
+.root{
+  flex-grow: 1;
+}
+
+.paper{
+  width: 300px;
+  height: 200px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.animateThis{
+  height: 250px;
+  width: 320px;
+  transition: transform 500ms;
+}
+.animateThis:hover {
+  transform : scale(1.05);
+}

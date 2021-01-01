@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
 import { VideoCallRounded } from '@material-ui/icons';
 
@@ -8,7 +8,7 @@ import Styles from './Navbar.module.css';
 
 const NavBar = () => {
   return(
-    <BrowserRouter>
+    <>
       <AppBar position="fixed">
         <Toolbar>
           <Link className={Styles.UndecoratedLinks} to="/" >
@@ -28,7 +28,8 @@ const NavBar = () => {
           </div>
         </Toolbar>
       </AppBar>
-    </BrowserRouter>
+      <div className={ Styles.TopContainer }></div>
+    </>
   );
 };
 
