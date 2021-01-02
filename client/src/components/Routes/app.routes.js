@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import history from '../../history';
 
@@ -17,12 +17,14 @@ const AppRoutes = function () {
   return (
     <Router history={history}>
       <NavBar />
-      <Route path="/" exact component={StreamList} />
-      <Route path="/streams/show" exact component={StreamShow} />
-      <Route path="/streams/new" exact component={StreamCreate} />
-      <Route path="/streams/edit/:streamId" exact component={StreamEdit} />
-      <Route path="/streams/delete" exact component={StreamDelete} />
-      <Route path="/test" exact component={SpacingGrid} />
+      <Switch>
+        <Route path="/" exact component={StreamList} />
+        <Route path="/streams/show/:streamId" exact component={StreamShow} />
+        <Route path="/streams/new" exact component={StreamCreate} />
+        <Route path="/streams/edit/:streamId" exact component={StreamEdit} />
+        <Route path="/streams/delete/:streamId" exact component={StreamDelete} />
+        <Route path="/test" exact component={SpacingGrid} />
+      </Switch>
     </Router>
   );
 }

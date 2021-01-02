@@ -15,18 +15,20 @@ class StreamList extends Component {
   renderStreamsList() {
     return this.props.streams.map( stream => {
       return (
-        <Link to={'/streams/'+stream._id}>
-          <Grid key={stream._id} item className="animateThis">
-            <Paper className="paper">
+        <div key={stream._id}>
+          <Link to={'/streams/show/'+stream._id}>
+            <Grid item className="animateThis">
+              <Paper className="paper">
+                <Typography>
+                  Display Image Here
+                </Typography>
+              </Paper>
               <Typography>
-                Display Image Here
+                { stream.streamTitle }
               </Typography>
-            </Paper>
-            <Typography>
-              { stream.streamTitle }
-            </Typography>
-          </Grid>
-        </Link>
+            </Grid>
+          </Link>
+        </div>
       );
     });
   }

@@ -2,17 +2,14 @@ import _ from 'lodash';
 
 export default ( state = {}, action ) => {
   switch(action.type){
-    case 'FETCH_STREAM' :
-      return { ...state, selectedStream : action.payload.stream };
-      
     case 'FETCH_STREAMS' :
-      return { ...state, ..._.mapKeys(action.payload.streamsList, '_id') };
+      return { ...state, ..._.mapKeys(action.payload.streamsList, '_id')};
 
     case 'CREATE_STREAM' :
-      return { ...state, [action.payload.id] : action.payload };
+      return { ...state };
     
     case 'EDIT_STREAM' :
-      return { ...state, [action.payload.id] : action.payload };
+      return { ...state };
 
     case 'DELETE_STREAM' :
       return _.omit(state, action.payload);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Container, Grid, TextField, Button, Box } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { connect } from 'react-redux';
 
 import StreamForm from '../../Components/StreamForm/StreamForm.component';
@@ -43,7 +43,7 @@ class StreamCreate extends Component {
   render(){
     return(
       <div>
-        <h4>Create Stream</h4>
+        <Typography align="center" variant="h5">Create a New Stream</Typography>
         <StreamForm onSubmit={ this.onSubmit } />
       </div>
     );
